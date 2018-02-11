@@ -1,6 +1,8 @@
 PEVN (PostgreSQL Express VueJS NodeJS) Starter
 =========================================
 
+![PEVN (PostgreSQL Express VueJS NodeJS) Starter](https://jes.al/public/wp-content/uploads/pevn.png)
+
 A basic example of how to use VueJS, Express and PostgreSQL in conjunction. More details on my [blog post](https://jes.al/2018/02/getting-started-with-express-vuejs-postgresql/).
 
 ## Usage
