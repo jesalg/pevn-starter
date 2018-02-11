@@ -1,9 +1,7 @@
 PEVN (PostgreSQL Express VueJS NodeJS) Starter
 =========================================
 
-A basic example of how to use VueJS, Express and PostgreSQL in conjunction.
-
-More details on my [blog post](https://jes.al/2018/02/getting-started-with-express-vuejs-postgresql/)
+A basic example of how to use VueJS, Express and PostgreSQL in conjunction. More details on my [blog post](https://jes.al/2018/02/getting-started-with-express-vuejs-postgresql/).
 
 ## Usage
 
@@ -13,8 +11,10 @@ More details on my [blog post](https://jes.al/2018/02/getting-started-with-expre
 
 2. Setup DB
 
-   `./node_modules/.bin/sequelize db:create`
-   `./node_modules/.bin/sequelize db:migrate`
+   ```
+   ./node_modules/.bin/sequelize db:create
+   ./node_modules/.bin/sequelize db:migrate
+   ```
 
 2. Run the application
 
