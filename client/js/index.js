@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Index from './Index.vue'
+import '../css/index.css'
 
 new Vue({
   el: '#index',

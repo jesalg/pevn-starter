@@ -1,6 +1,0 @@
-extends layout
-
-block content
-  #index(data-visitors-json="#{JSON.stringify(visitors)}")
-  script(src="#{webpack_asset('index', 'js')}")
-  link(rel='stylesheet', href="#{webpack_asset('index', 'css')}")
