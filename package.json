@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build": "node_modules/.bin/webpack --config webpack.config.js"
   },
   "dependencies": {
     "body-parser": "~1.19.0",
@@ -15,6 +16,7 @@
     "pg": "^7.17.0",
     "pg-hstore": "^2.3.3",
     "pug": "^2.0.4",
+    "pug-html-loader": "^1.1.5",
     "sequelize": "^5.21.3",
     "serve-favicon": "~2.5.0",
     "vue": "^2.6.11",
