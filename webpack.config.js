@@ -1,8 +1,9 @@
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var SaveHashes = require('assets-webpack-plugin');
 var isProd = (process.env.NODE_ENV === 'production');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 var config = {
   entry: {
@@ -31,12 +32,12 @@ var config = {
         }]
       },
       {
-        test: /\.js$/,
+        test: /\.m?js$/,
         exclude: /node_modules/,
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: ['es2015']
+            presets: ['@babel/preset-env']
           }
         }]
       },
@@ -48,16 +49,8 @@ var config = {
         }
       },
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: {
-            loader: 'css-loader',
-            options: {
-              minimize: true
-            }
-          }
-        })
+        test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
     ]
   },
@@ -66,17 +59,14 @@ var config = {
     new SaveHashes({
       path: path.join(__dirname, 'config')
     }),
-    new ExtractTextPlugin({
-      publicPath: '/dist/',
-      filename: '[name].[hash].css',
-      allChunks: true
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
-    })
+    }),
+    new MiniCssExtractPlugin(),
+    new VueLoaderPlugin()
   ]
 }
 
